@@ -1,0 +1,2041 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>lessons 1 - 15</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="58078af9-fcd1-4428-af98-8fac248cd70d" class="page sans"><header><h1 class="page-title">lessons 1 - 15</h1><p class="page-description"></p></header><div class="page-body"><p id="0a47a5b3-6eb0-40a9-9b70-f3852390cf12" class="">   </p><p id="660efa8b-2577-4fec-8d27-6c955816c922" class="">
+</p><p id="a0ab29af-90db-4873-823f-dda5350480f3" class="">Variable initialization:</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="8dd3f464-d798-40f9-9b8e-0dd2e138d656" class="code"><code class="language-C++">int x = 5;
+
+int x(5); // x=5; direct initialization
+
+int x(); // func or variable? could be func
+
+int x(3.4); 
+
+{} -&gt; uniform 
+
+int x{ 5 }; -&gt; list initialization 
+
+int x{}; → value initialization , 0 or NULL
+
+int x{3.4} -&gt; compiler syntax error
+
+int x[10]{};
+
+void foo(){  
+    // same defs for GLOBAL
+    static int x;    // → zero initialization
+    static int *x;   // → NULL initialization  
+    static bool x;   // → FALSE 
+}</code></pre><p id="1c4aae2c-42a1-4632-a67a-7a7548cc2e26" class="">
+</p><p id="901f2392-7504-42e5-9f2f-82648c171948" class="">NULL → nullptr         </p><p id="69d2f651-461e-4096-93f3-7f01cc4ccb8c" class="">ARTIK HEP <strong>nullptr </strong>kullan (tam NULL değil ama NULL’a da dönüşüo , yani başka kontrollerde yapılıo bunla)</p><p id="27bd24b1-d257-489f-9ec3-b69d00206379" class="">
+</p><p id="824e730d-6cd3-40f0-b3f8-e7495b2b7e36" class="">VALUE CATAGORIES</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="d56e4409-1c09-4713-8fd4-b3eab33cdf91" class="code"><code class="language-C++">  
+L value   - adresi olan hersey
+
+example: *ptr
+
+eğer bir expression(ifade) yi L value olup olmadığını test etmek istersen &amp; kullan.
+
+Örnek,
+
+int x;
+
+&amp;x;   → hata vermedi. O zaman L value
+
+R value    -      L value olmayanlar R value
+
+Universal Value -&gt;    &quot;auto &amp;&amp; x;&quot;   ÖZEL dikkat &quot;int &amp;&amp; x;&quot; değil karştırma
+
+
+ref values
+
+
+int &amp;x -&gt; L value REF
+int &amp;&amp;x -&gt; R value REF
+auto &amp;&amp;x -&gt; universal REF - hem L hem R value ref ve türden bağımsız !!!!!!!!
+-----------------------------
+int &amp;x = a;
+int &amp;&amp;x = 10;
+ </code></pre><p id="5628613d-ec5b-4bba-92a2-cef15e9091ac" class="">
+</p><p id="894ed743-bd38-4d23-86ab-f28f822d1fd7" class="">
+</p><p id="388e6760-3eae-4b46-8418-3cc67774b320" class="">REFERANS SEMANTİĞİ</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="ee1718b0-1aa7-4159-90af-bc9778b5197a" class="code"><code class="language-C++"> int a[10]{};
+ int (*ptr) = &amp;a;   // dikkat int *ptr = a; bu sadece a dizisinin ilk elemanını gösterir
+ int (&amp;ref)[10] = a; // referans semantiği
+
+int x = 5;
+int &amp;y = x; // y artık x oldu (tabiki arka tarafta pointer işlemleri koşuo ama seni karmaşık &quot;-&gt;&quot; vs kurtarıo )
+
+const int &amp; x = 10;  //geçerli ama derleyici gizli bir yerde x i yaratır, dikkat x değiştirilemez const luktan.
+
+// int &amp;x = 10; // ERROR
+// NOT: int&amp; const x = a;    -&gt; BU SAÇMA referans larda zaten gizli const var aynı yerde, sen bir referansa başka bir değişkeni artık göster diyemezsin !
+
+
+int g = 5;
+int &amp; foo(){ return g;}
+
+foo() = 999; // çünkü artık foo = g referans döndü
+
+
+//C de böle yapıosan ;
+test_create(obj * me, const obj_t * me_)
+//C++ de artık böle;
+test_create(obj &amp; me , const obj_t &amp; me_)  // bu zaten class member function aslında !! &quot; class = obj &quot;</code></pre><p id="d7fd4a77-218b-4967-81c9-499aafb0b0d9" class="">
+</p><p id="877017e3-b043-4f49-b1c3-b1f6f66cc666" class="">
+</p><p id="12189ce2-f8b9-4dc5-9e75-8bb0b1d81c8f" class="">auto → her türe uyar, AAA (almost always auto)</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="30d4bde4-1159-4a7c-b6da-14e2e576fc70" class="code"><code class="language-C++"> 
+auto x = 42;         // int türünde
+auto y = 3.14;       // double türünde
+auto name = &quot;John&quot;;  // const char* türünde
+
+const int x = 10;
+int yy = x;   // ee bu mantıklı ! o zaman aşağıdakide mantıklı
+auto y = x ; // burda y int yani constlık düştü
+ 
+
+
+int a[20];
+auto b = a; // int*b = a;  , array dikey
+
+const int a[20];
+auto b = a; // const int*b = a;  , array dikey 
+
+
+// ref autolar***********************************
+
+const int x = 10;
+auto &amp; y = x;  // const int &amp; y = x;
+ 
+
+int x[10]{};
+auto &amp;y = x;   // int (&amp;y)[5] = x;              BU SUPERMIŞ !! Diziye direk erişim
+
+int x[10][20]{};
+auto &amp;y = x;   // int (&amp;y)[10][20] = x;         Hamallıktan kurtarır
+
+
+auto&amp; x = &quot;hello&quot;  // const char (&amp;x)[5] = &quot;hello&quot;  , yani bu string için global ram de bi yere yazıldı tanımlandı, onun referansı da bu
+
+int foo(int); // function
+auto&amp; f= foo; // int (&amp;f)(int) = foo ;   auto türü &quot;int(int)&quot; , bu bi fonksiyon ise , f func türü, function referasn türü</code></pre><p id="2efd91d0-7324-4ec9-b7c5-a43218a08b67" class="">
+</p><p id="514a0eac-b827-4ce2-8b18-4ad3a59dd234" class="">Function Return Opstion (LIKE it &lt;3 )</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="3cff2d08-1f00-4d4d-8fbb-ae63d22a64fd" class="code"><code class="language-C++">  
+void koo(int *a , double b);
+
+auto foo() -&gt;  void (*)(int* , double)
+{
+
+
+   return koo;
+}</code></pre><p id="836948a1-8dfc-431d-877b-45f1e0f6db46" class="">
+</p><p id="fa6589b3-93a6-4197-998e-654ff7ee953a" class="">decltype → derleme zamanında </p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="c97fa418-f854-46f1-a75f-52f3c5259956" class="code"><code class="language-C++">int x = 42;
+const double y = 3.14;
+
+// decltype kullanarak değişken türlerini belirleme
+decltype(x) a = 10;        // int
+decltype(y) b = 2.71828;    // const double
+
+
+// functions 
+int foo1();
+int &amp; foo2();
+int &amp;&amp; foo3();
+
+decltype(foo1())  // int
+decltype(foo2())  // int &amp;
+decltype(foo3())  // int &amp;&amp;
+</code></pre><p id="5d5efbc3-2e08-414a-bf76-2467078b9e17" class="">
+</p><p id="8fa0172f-3082-45c1-a91b-16a084b17ddf" class=""><strong>using : </strong>typedef yerine artık bunu kullan</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="f96db240-6bb2-49d2-b9a8-e126fea71504" class="code"><code class="language-C++">  
+    using my_ptr = int[20];    // typedef int my_ptr[20];
+    using my_ptr = const int*; // typedef const int* my_ptr;
+    using my_ptr = int (*)(const char* , char*); // typedef int (*my_ptr)(const char* , char*)</code></pre><p id="3039bcb9-5a3c-4383-9924-4a4e59ebf99f" class="">
+</p><p id="34b6beaf-d61a-4120-8c72-7709a66ccc05" class="">REFERENCE COLLAPSING ( referansa referans olma durumlarının hangi tür olacağı kararı verme)</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="c17a3641-0803-432a-916d-16e70f94bf10" class="code"><code class="language-C++">  
+using lref = int&amp;;   // typedef int my_ptr[20];
+using lref2 = int&amp;&amp;; // typedef int my_ptr[20];
+
+int y{};
+
+lref &amp;x = y;
+lref &amp;&amp;x = 10;
+lref &amp; &amp;&amp;x = y;
+lref2 &amp;&amp;x = Y;
+lref2 &amp;x = y;
+
+KURAL -&gt; 
+T&amp;  &amp;   =&gt; T&amp; (l value)
+T&amp; &amp;&amp;   =&gt; T&amp; (l value)
+T&amp;&amp; &amp;   =&gt; T&amp; (l value)
+T&amp;&amp; &amp;&amp;  =&gt; T&amp;&amp; BU FARKLI   REF (R value)</code></pre><p id="f4908bd4-a7ec-4597-9c1d-2e4be4ebfea2" class="">
+</p><p id="9532ac4c-58c2-4176-8dee-aa952bc296be" class=""><mark class="highlight-red">auto &amp;&amp; x;    UNIVERSAL referans herseye bağlanıo. L da R value de olur</mark></p><p id="e3b3a240-cafc-422d-83dc-2f61aef60e90" class="">
+</p><p id="330f5d6b-2029-4d70-8eb0-899b57945004" class="">
+</p><p id="086c45a2-eac4-47e7-bc23-c73e3c2c5147" class="">Funstions inits SUPER özellik, compile timeda oluo</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="79b58d98-2d58-4773-a490-3026e4e7bae3" class="code"><code class="language-C++">void foo(int , int = 5);
+
+foo(6);  // foo(6,5); </code></pre><p id="906a6053-4c35-4387-a523-002dde7af3c7" class="">
+</p><p id="48f07512-ce74-4a8a-b808-535e97ff6c33" class=""><strong>constexpr   </strong>- const yerine artık bunu kullan. gizli inline taşır. compiler optimize yetkisi alır.</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="ec861b97-820d-4483-a507-efae0d86159f" class="code"><code class="language-C++">const int  x = 10;
+int a[x]; // bunun çalışması için x e değer verilen ifade önemli
+
+int r = 5;
+const int  y = r;
+int a[y]; // ERROR    , işte bu olmasın istiyorsan &quot;constexpr&quot;
+
+constexpr int  x = 10;   // bunu yaparsan yukardaki problem olmaz
+constexpr int  x = r;    // ERROR, sabit exprassion olmalı
+
+
+constexpr int test(int x){  // SUCCESSS 
+   int y = x;
+   return y*y*x;
+}
+
+constexpr int test(int x){  // ERROR , sıkıntı VAAAAR
+   static int y = x;        // static yapamazsın
+   return y*y*x;
+}
+
+/** &quot;constexpr&quot; asıl olay şu , run timeda değil compile timeda değerler belli olsun, 
+    örneğin yukardaki fonksiyonu &quot;constexpr&quot; ile oluşturunca, derleyici fonksiyonu komple derleme 
+    zamanında alıp bir sabit ifadeye çevirio yani fonksiyon artık fonksiyon değil sabit değer oluo. 
+    Tabiki bunun kararını vermesi için fonksiyonun girdileride sabit olmalı !! eğer değilse runtime da olur derleyici optimize etmeyebilir.
+    BU DEVRİM.. **/
+
+// örnek
+
+constexpr int ndigit(int x){
+	return out;
+}
+
+int main(){
+
+char array[ndigit(1541512)]; // hata yok çünkü fonksiyon girdisi sabit ifade ve fonksiyon kendisi &quot;constexpr&quot; dolayısıyla cevap compile timeda zaten biliniyordu. 
+
+constexpr int abc = 54848;
+char array[ndigit(abc)]; // yukardaki ile aynı durum
+
+int abc2 = 11;
+char array[ndigit(abc2)]; // OLMADI hata yok kodda ama artık değer run timeda işlem sonucu bulunur, optimize olmaz.
+
+}</code></pre><p id="59accecb-62b1-418d-8af3-1184ffee0763" class="">
+</p><p id="15882d86-980a-4846-bcd5-c6f0ab9b1713" class="">
+</p><p id="ded8baee-cbf4-484b-ad94-1a60004a6ac3" class="">ODR (one defination rule). Bir fonksiyonun bildirimi bir den çok olabilir. AMA bu fonksiyonın tanımı 1 kere yapılmalı.</p><p id="01f2fa2c-14ac-49b5-9657-5f1d61e01c68" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="d698d2de-6d0f-4d11-8fa8-f0062c3eda76" class="code"><code class="language-C++">
+#include test.c
+
+int foo(){
+ return x;
+}
+
+#include test2.c
+
+int foo(){                  // foo 2 kez yazıldı olmaaaaz linker hatası, Dikkat derleyici bulamayabilir.
+ return x;
+}
+
+*******************************
+
+int foo();
+int foo();           // ama burda sıkıntı yok bildirimi istediğin kadar yap istediğin her yerde</code></pre><p id="ef0af4cd-5120-49bf-8cf1-b0fed1fb3e02" class="">
+</p><p id="78ec38d3-4ebd-4578-8c93-13431cf0bbe7" class="">inline → en önemli optimizasyon</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="8da79852-5237-465d-8d56-ca3f03078b77" class="code"><code class="language-C++">inline int foo(int x){
+  return x*x;
+}
+
+int foo(int x){
+  return x*x;
+}
+
+// bu yokardaki iki fonksiyonda nerdeyse aynı, inline olmayan fonksiyonu derleyici optimizasyon yaparken inline mış gibi yaklaşabilir
+// veya inline olan fonksiyonu derleyici inline değilmiş gibi inline hiç yokmus gibi yani direk linkera bağlayarak da yaklaşabilir. optimizasyon ayarına bağlı.
+
+
+// ODR tanımını inline parçalayabilir
+
+#include test.c
+
+inline int foo(){
+ return x-5;
+}
+
+#include test2.c
+
+inline int foo(){                  // ODR ihlal edilmedi inline çünkü. TEK şartla fonksiyonlar token by token aynı olmalı. mesela biri bile -6 olmamalı.
+ return x-5;
+}
+
+
+// Bu bize şunu sağlar inline fonksiyonlar; .cpp ler artık iptal. .h yani headarda tüm fonksiyonları inline yap o zaman hiç cpp kullanmana gerek kalmaz. 
+// YANİ sadece h olan kütüphaneler oluşuyor only header
+
+
+*****************************************************
+
+static vs inline   (in header)
+
+static foo(){} // in header
+aynısını tüm headerlarda fonksiyonları static yaparakta yaparız ODR ihlal olmaz.çümkü &quot;internal linkage&quot; da static yapınca. 
+Yani her headerı çağırınca birden fazla o static yaptığın fonksiyon oluşuyor. adresi felan herseyi farklı birbirinden.
+
+inline foo(){} // in header
+AMA inline yaptığın fonksiyonlar sadece bir kere yaratılır. static gibi her headırı çağırdığın yerde yeniden adres atama ve fonksiyon yaratma olmaz. 
+inline yaparsak o fonksiyon sadece 1 kere yaratıldı yani tek bir adresi var.
+
+
+dikkat: C++ 17 den sonra global yerel değişkenlerde inline yapılıo ve ODR bozulmuo. 
+header içinde -&gt;  inline int x=5;    -&gt; for c++ 17 ve sonrası için
+
+
+Dikkat classlarda ODR bozmaz
+
+
+Dikkat constexpr fonksiyonlar iplictly inline dır ve yine ODR kuralını bozmaz.
+heaadır içinde -&gt; constexpr int foo(){return c;}  sıkıntı yok gizli inline var -&gt; aynı constexpr inline int foo(){return c;} </code></pre><p id="e7982e66-27e8-4575-9c11-e2647f501516" class="">
+</p><p id="7ad8c366-09ad-4681-9b3d-04436c5ad7f0" class="">  <strong><mark class="highlight-red">DERS 7</mark></strong></p><p id="f41feea4-f902-48d2-885f-e443fcc3820f" class="">
+</p><p id="1ef00743-0fb3-486a-84be-ef4788122220" class=""><strong>enum</strong></p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="6245ff8e-3d62-4eba-8f33-5dc3532798aa" class="code"><code class="language-C++">enum colors : int { red , greed};     // bu özellik modern c++ da
+
+enum class colors { red , greed};     // bak bu class felan değil kafa karıştırma, bu türün kapsamı olmasını sağlıor, BUNU HEP KULLAN
+
+enum class CLR { red , greed};  
+
+colors::red;
+CLR::red;     // bu ikisi eski enumda hata verirdi artık scopeları var ve böle çağrılır.
+
+CLR myclr {CLR::red};
+int x = myclr;                        // hata !! eskiden değildi. classı silersen enumdan yine hata olmaz
+int x = static_cast&lt;int&gt;( myclr );    // çözüm bu yukardakinin 
+
+**********************************************
+
+c++ 20 de gelen özellik
+
+using enum CLR;           dersen, artık o scopda CLR::red demene gerek yok,   direk red diye çağır.</code></pre><p id="8755c07f-461c-4f27-b791-e329b6dd15a5" class="">
+</p><p id="031d5f21-0f7a-46a7-92ce-0a0672d7b170" class="">::</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="57d613e8-8636-44eb-88ff-e84b6170251e" class="code"><code class="language-C++">::x -&gt; scope resolution operator , binary operator 
+
+:: sayesinde derleyici &quot;name lookup&quot; yani isim aramaya bakarken, LOCAL alanda isim aramayı bırakıp global alanda arar
+
+örnek:
+
+int main(){
+   int printf = 10;
+   printf(&quot;hello&quot;);   // hata -&gt; int printf bulunur
+}
+
+int main(){
+   int printf = 10;
+   ::printf(&quot;hello&quot;);   // hata YOK , printf artık local de değil globalde aranır ve bulunur.
+}
+
+x::y ise -&gt; x &quot;namespace&quot; yada &quot;class name&quot; olmalı ve onun içinde çağrılan ismin name lookupında aranacak demek</code></pre><p id="30b68297-4021-4b53-84f4-18ec7fe0ad4c" class="">Compiler Not</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="f94bb032-62db-4df7-b854-4743bc749faa" class="code"><code class="language-C++">Derleyici proses steps;
+ 1 - Name lookup     - ilgili exprasion ismi geçerlimi var mı
+ 2 - context control - syntax uygun mu, kod hatası var mı , dil kuralları
+ 3 - access control  - public private bakılıo izin var mı o isme ulaşmaya</code></pre><p id="f10f963e-6341-43a6-9822-e3f124788f6f" class="">
+</p><p id="d3d97da0-8e41-4372-9a7f-da8b9841c9d9" class="">C++ → () içinde ifade tanımlanıor</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="acd9538c-4db1-46a9-b44e-76a2b62d06ec" class="code"><code class="language-C++">int test(void){
+   return 1;
+}
+
+int main(){
+
+  while / if / switch( int x = test() )  
+  {
+  }
+
+if( int x = test() ){}  
+
+int x = test;
+if(x){}              //  bu yukardaki ile aynı anlam scope leakage engellenio yukarda  
+
+}
+
+*****************************
+if(x = test(); x &gt; 10){    // buda c++17 den sonra
+  x = 6
+}
+else
+{
+  x = 8;   // bak x burdada geçerli çok iyi
+}</code></pre><p id="35e7bb6a-769b-4d67-a0a9-3d9e786e7967" class="">
+</p><p id="cd5023fe-7ac5-46a3-b1c1-94d00ce3bc9c" class=""><strong>type-casts ,</strong> olay şu diyelim sen kodda (double*) tür dönüştürmeyi böyle yaptın. Kodda bunu nasıl arıcan, tüm tür dönüştürmeleri?. O yüzden isim vermişler aşağıdaki gibi. ve compiler controlünde.</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="872a2fcc-ba38-4e83-8bf2-eb21c1d37280" class="code"><code class="language-C++">static_cast           
+const_cast
+reinterpret_cast
+dynamic_cast            (bu sonra öğrencez ileri seviye)
+
+xxxxx_cast&lt;type&gt;(expression)
+static_cast&lt;int&gt;(x)   
+
+int x = 0;
+double dval = static_cast&lt;double&gt;(x);
+
+void* d = &amp;x;
+int* ptr = static_cast&lt;int*&gt;(d);
+
+************
+
+int x{5};
+const int *f = &amp;x;
+int * ptr = const_cast&lt;int*&gt;(f);      // constlar için 
+
+**************
+
+double x{5}; 
+char * ptr = static_cast&lt;char*&gt;(&amp;x);         // hata
+char * ptr = reinterpret_cast&lt;char*&gt;(&amp;x);    // ÇÖZÜM bu , reinterpret_cast: Bu operatör, genellikle özellikle işaretçi türleri arasında dönüşüm yaparken kullanılır. 
+// Ancak, dikkatli kullanılmalıdır, çünkü bu operatör tip güvenliğini sağlamaz. Eğer yanlış bir tür dönüşümü yapılırsa, programın davranışı tanımsız olabilir.</code></pre><p id="f349544f-eab2-470d-8062-6507153f3ac2" class="">
+</p><p id="26b61294-e0af-4165-9403-5d605968a1e4" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="e4bf0ab0-372c-48d0-b26d-592dfb1b54f1" class="code"><code class="language-C++">[[xxxx]]    -&gt; bunlar compilera direktifi , compilera göre değişir
+[[nodiscard]]   çok kullanılıo
+
+örnek:
+
+[[nodiscard]]
+int foo(){ return 5; }
+
+foo();    // derleyici uyarı vercek çünkü geri dönüşünü kullanmadın</code></pre><p id="2ae6e1a4-70ed-484c-9116-6978e6399eef" class="">
+</p><p id="8009c223-e3d0-4b78-aedb-60593167e976" class="">Function overloading - <strong><mark class="highlight-red">DERS 8</mark></strong></p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="6a2dccd0-4a1e-43f4-9e61-30387a4b7aca" class="code"><code class="language-C++">
+//Function Overload - compile time da oluor.
+//Aynı isme sahip bir den fazla fonksiyon yazabilme özelliği
+
+int foo(double);
+int foo(int);      // işte bu ikisi overload
+
+int foo(int*)
+int foo(int[])    // bu func redecleration , aynı func ikiside , overload değil tabiki
+
+
+&quot;ambiguity&quot; (belirsizlik) // sentaks hatası, uygun tür değişkenin olmaması
+
+int foo(int,double); // bu fonksiyonun signutere(imza) sı    &quot;(int,double)&quot; dönüş değil 
+
+************
+void foo(int*)
+void foo(int)
+
+void main(){
+   foo(NULL);  foo(0); //  bak eğer burda NULL = 0 deseydik  foo(int) çağrılırdı, &quot;nullptr&quot; bu yüzden var !!
+   foo(nullptr);       //  foo(int *) çağrılırdı 
+}
+
+******************
+void foo(int&amp;)    // L valueler buna  
+void foo(int&amp;&amp;)   // R valueler buna
+
+void main(){
+   int x;
+   foo(x);        //  void foo(int&amp;) 
+   foo(56);       //  void foo(int&amp;&amp;) 
+}
+
+ void foo(const int&amp;)    // r da alır l de alır</code></pre><p id="2c71a65b-8429-4f49-b430-623af1b3e441" class="">
+</p><p id="a5256097-42ea-4cda-8e7e-7dc31e034adb" class=""><strong><mark class="highlight-red">DERS 9</mark></strong></p><p id="b636c01b-9019-4136-b1e3-3b8796f278ed" class="">
+</p><p id="a43c0b29-b229-4c87-8a7b-7719bf72a0a6" class="">Classes</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="3965b2ec-6e37-4940-b9d1-fe3ab2bac402" class="code"><code class="language-C++">----- header file  ----
+class my_class{
+// burası default private, struct olsa public
+public:
+   void foo();
+
+
+}
+
+inline void my_class::foo()  // heeader içinde ODR uygun olması için inline olmalı, constexpr de gizli inline var constexpr olsa da sıkıntı yok
+{
+
+}
+
+
+------------------------------
+
+
+----- header file  ----
+class my_class{
+// burası default private, struct olsa public
+public:
+    void foo()    // burda gizli &quot;inline&quot; var yukardaki gibi aslında ama inline gizli, implist
+		{
+		
+		}
+
+
+}
+
+*******
+
+----- header file  ----
+
+class my_class{
+// burası default private, struct olsa public
+public:
+   void foo();
+   int x;
+}
+
+----- cpp file  ----
+
+int x;
+
+ void my_class::foo()  // heeader içinde ODR uygun olması için inline olmalı
+{
+  int x;
+
+  my_class::x = x + ::x;   // hiç sıkıntı yok, ::x(global) , x (local) , my_class::x(class scope)
+  // veya this-&gt;x ,  my_class::x  yerine
+}
+
+void main{
+  my_class cl;
+
+  cl.foo();             // aşağıdakiyle aynı
+  cl.my_class::foo();   // sıkıntı yok, kalıtımda kullancaz, burdaki kullanım sacma, ama olay :: name lookup 
+}
+
+</code></pre><p id="c6fb895b-173f-4f1d-8c45-cfe75fb12767" class="">
+</p><p id="49223379-7c95-4b4e-b449-d232de3e49db" class=""><strong><mark class="highlight-red">DERS 10</mark></strong></p><p id="13d99a0d-ef75-4ff2-8374-af74a5c76324" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="43d5dd0c-1b7b-4d33-b861-cdb023873417" class="code"><code class="language-C++">
+THIS , bu bizim C deki   void foo(obj*me);   nin &quot;me&quot; si &quot;this&quot; :)   Direk classın adresi yani anladın sen onu
+
+----- header file  ----
+
+class my_class{
+
+public:
+   void foo()
+	{
+	    this   // direk classın adresi
+	}
+	static void foo2()   // static ancak static i çağırır
+	{
+	   this     // hata , static de olmaz
+  } 
+}
+
+******
+DİKKAT this PR (R) value 
+
+class my_class{
+
+public:
+   void foo();
+   int x;
+}
+void my_class::foo(){
+    my_class m;
+    this = &amp;m;     // this L value olsaydı bu çalışırdı. AMA R value bu sentaks hatası o yüzden !!!1
+   *this = mz;     // bu çalışıor bak L yaptık.
+   
+   this-&gt;x = 5;
+   my_class::x = 5   // bu sadece look up bakıo yani direk x bu
+   x = 5;   // bu yukardaki 3 ü de aynı
+}
+
+********************
+this keywod
+this pointer
+
+*this nesnenin kendisi</code></pre><p id="283d519e-ee87-4ff4-ae28-0ef353a8d585" class="">
+</p><p id="41fe0a25-6c13-4dc8-80fe-a3370955c8ae" class="">this neden kullanılır örnekler:</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="24240494-fe92-4f73-811b-d99a5a374b64" class="code"><code class="language-C++">class my_class{ 
+public:
+   void foo(); 
+}
+
+// c file
+
+void test2(my_class *p){
+    
+}
+
+void test1(my_class &amp;r){
+    
+}
+void my_class::foo(){
+    test1(*this);
+    test2(this);             // bizim c de ki object mantığı
+}
+</code></pre><p id="97164364-b6b9-4726-a42d-bc57d01171f4" class="">
+</p><p id="9ec51c31-e193-4537-96e3-668646bee1a2" class="">this neden kullanılır örnekler: <strong><mark class="highlight-red"> BU ÇOK İYİİİİİ</mark></strong></p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="5e5c37c6-eee7-46da-af33-628e1f3107bb" class="code"><code class="language-C++">class my_class{ 
+
+  public:
+    my_class&amp; foo();
+    my_class&amp; bar();
+    my_class&amp; baz(); 
+}
+
+// c file
+
+void my_class::baz(){
+    // ..
+    return *this;
+}
+
+void my_class::bar(){
+    // ..
+    return *this;
+}
+
+void my_class::foo(){
+    // ..
+    return *this;
+}
+
+int main () {
+
+  my_class ME;
+
+  ME.bar().baz().foo();    //  &quot;chaining&quot; zincirleme 
+
+  count &lt;&lt; x &lt;&lt; y &lt;&lt; &quot;test&quot;;    // &quot;chaining&quot; ref@789
+
+  count.operator&lt;&lt;(x).operator&lt;&lt;(y).operator&lt;&lt;(&quot;test&quot;);  // ref@789
+}</code></pre><p id="0824979b-2bdd-4dc6-9218-0d1b4c8260c0" class="">
+</p><p id="9e95da5b-f26f-48a1-bca6-7c7b392e83e1" class="">this benzer mantık yukardaki ile</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="6d6def45-be88-4a21-bf22-7259f60d56b3" class="code"><code class="language-C++">class my_class{ 
+
+  public:
+    my_class* foo(){return this}
+    my_class* bar(){return this}
+    my_class* baz(){return this}
+}
+
+ 
+int main () {
+
+  my_class ME;
+
+  ME-&gt;bar()-&gt;baz()-&gt;foo();     
+}</code></pre><p id="7ebb48d5-4f7c-4a7e-84df-4a7995948a14" class="">
+</p><p id="7b02e14e-c9bc-4e11-9a31-a1282613d011" class="">const functions</p><p id="35c65a55-1a4f-4179-aba3-ee4208e55b35" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="84d143e6-1b55-4f62-bdc2-34e7b61cd072" class="code"><code class="language-C++">---- C de:
+
+void foo(const  my_obj * me);
+
+
+----------C++ da
+
+class my_class{ 
+
+  public:
+    void foo()const ;    // gizli const my_class * this(me)
+}
+ </code></pre><p id="36f7c76e-c7f2-435e-99e4-0b439920c2e5" class="">bu classların aslında hepsinin içindeki fonksiyon bizim c de ki gibi gizli objeye sahip &quot;me&quot; gibi </p><p id="df6cc463-fbb1-4b01-b013-ca0bcc1d495f" class="">hatta class sizeoffu nu fonksiyon hiç etkilemio , sadece içindeki değişkenler belirlio aynı C de ki struct :) yani o fonksiyonlar aslında hep globalde , bizim c de ki gibi “me” almıs compiler yapıo bu işi. 😀</p><p id="199ce724-eb67-4b7f-8da6-f3a5b163d4d2" class="">
+</p><p id="b21696bb-53de-497f-9fa1-a05cdeb77f89" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="fb2ccc69-5b4b-4f3d-88f7-283613a62d45" class="code"><code class="language-C++">
+class my_class{ 
+
+  public:
+    void foo()const ;    
+    void bar();     
+}
+
+int main () {
+
+  const my_class ME;
+
+  ME-&gt;foo();   // sıkıntı yok
+  ME-&gt;bar();   // sentaks hatası Neden mi (const my_class* this) gizli elemanı const olmayan fonksiyona erişemez, değişmeme sözü bozulurdu aksi durumda
+}
+
+----  C version 
+
+ 
+void foo(const obj * me) ;    
+void bar(obj * me);     
+ 
+
+int main () {
+
+   const my_class ME;
+
+   foo(ME);   // sıkıntı yok
+   bar(ME);   // sentaks hatası 
+}
+
+
+************************************
+class my_class{ 
+
+  public:
+    my_class* foo()const ;        // const dönmeli
+    const my_class* foo()const ;  // bu doğru 
+}</code></pre><p id="59e64c4c-51cb-4c45-8434-7b3a05a0a246" class="">
+</p><p id="539c0f52-2ccb-4a8d-96db-c5dc2802ffbe" class="">En çok kullanılan overloading</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="9915e736-ee67-4206-94bb-f2ffa7b91f02" class="code"><code class="language-C++">class my_string{ 
+
+  public:
+    void foo()const ;    
+    void foo();        // overloading
+}
+
+int main () {
+
+   const my_string me;
+   me.foo();          // void foo()const ;   obje değişime kapalı, okuma için
+
+   my_string me2;
+   me2.foo();   // void foo();  obje değişime açık
+}</code></pre><p id="edd432fd-4410-4636-b431-0b92f3a375aa" class="">
+</p><p id="78f7b8ae-ceef-44b5-9c6c-9da0d8db925b" class="">“<strong><mark class="highlight-red">mutable</mark></strong>”  </p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="9beaa322-6792-4709-bb86-fb46259a0f74" class="code"><code class="language-C++">class my_string{ 
+
+  public:
+    void foo()const 
+		{
+			debug_count++;     // bu sentaks hatası fonksiyon const değiştiremezsin. 
+//ama öyle durumlar var ki const fonksiyon objenin anlamsal açıdan fark yaratmayan 
+//değişkenlerini belki test için değişmesi gerekecek o zaman ne yapacan? ÇÖZÜM AŞAĞIDA
+		}    
+
+    int debug_count;
+}
+
+-- ÇÖZÜM ---
+
+class my_string{ 
+
+  public:
+    void foo()const 
+		{
+			debug_count++;     // şimdi çalışır
+		}    
+
+    mutable int debug_count;  // &quot;mutable&quot; : değişken
+}</code></pre><p id="511add08-e42f-4f43-84bf-8649945ccc7a" class="">
+</p><p id="ab18e1f5-15a9-4843-ae4b-0900144b0fca" class="">
+</p><p id="a9573a2d-b8da-4009-a06e-61072f25768b" class=""><strong><mark class="highlight-red">DERS 11</mark></strong></p><p id="cb106435-69d9-499e-8bca-8b1109ee1920" class="">constructor, destructor   , kural: static olmayacak, const olmaz, member function olacak(yani global değil sınıfın içinde), sınıfın adı olacak. Birden fazla olabilir.(func overloading)</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="edc0717f-529d-4000-a2fa-a7125f7b6d02" class="code"><code class="language-C++">class my_string{ 
+
+  public:
+    my_string();      // constructor , default constructor argüman almıo
+    my_string(int);   // constructor , overload olabilir
+		~my_string();     // destructor   
+}
+
+void main{
+	{
+     my_string  m;
+     // ...
+	}  // burda gizli  &quot;~my_string&quot; çağrıldı
+}</code></pre><p id="54780bbc-b83c-4343-9d50-215c625944de" class="">
+</p><p id="7099152d-023d-4b30-a84f-208728e32781" class=""><strong>special member functions:</strong> derleyici bunların kodunu bizim için yazabiliyor. Bu fonksiyonları sen bir class yazınca derleyici gizli yazıo yani.</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1111000e-edf7-49b8-8a16-040d364f5b83" class="code"><code class="language-JSON">default ctor
+destructor
+copy ctor
+move ctor      (C++ 11)
+copy assigment
+move assigment (C++ 11)</code></pre><p id="e666c8d6-8da4-4823-95c3-d7127eb46a19" class="">Derleyicin bunların kodunu bizim için yazmasına → “default” etti denir.</p><p id="63bae0c1-5cbb-40b5-aae1-14112a0d9605" class="">
+</p><p id="13e80f15-9eb4-48d4-92c8-e0519a76e399" class=""><strong>RAII </strong>→ idomu : &quot;Resource Acquisition Is Initialization” : Temel fikir, bir nesne oluşturulduğunda, o nesnenin yapılandırıcı metodunun çağrılması ve kaynakların bu yapılandırıcı içinde edinilmesidir. Nesne yok olduğunda ise yıkıcı metodun çağrılması ve kaynakların serbest bırakılmasıdır.</p><p id="c3b6c718-b5d9-4452-afde-d44f74195b81" class="">
+</p><p id="936099c7-322b-4d09-9680-b42fc2a67ae2" class="">Bir nesnenin storage katagorisi şunlardan birdir. Nesnenin hayatını tutuo.</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="ba31e258-d7cf-4515-bc3d-d5530e96a6e9" class="code"><code class="language-JSON">automatic storage class          -&gt; örneğin fonksiyon içinde class çağırdın (static class değil tabi)
+static storage class             -&gt; global member functions
+dynamic storage class
+thread-local storage class</code></pre><p id="f5bc6752-9c5a-41d2-9d4d-eb272e1acbb1" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="f3fe4424-b829-4031-959b-4cb07615095e" class="code"><code class="language-C++">class my_string{ 
+
+  public:
+    my_string()
+    {
+      // .. default ctor
+    }  
+  private:
+    int x;    
+}
+
+void main(void){
+   my_string m;    // defaul init  // .. default ctor ,  AMA x e ilk değer atanmadı çöp değer var içinde !!!
+   my_string m2{}; // value init   // .. default ctor , x e 0 atandı {} sayesinde !!
+   my_string m3(); // hataa!! bu fonksiyon tanımıı !!
+}</code></pre><p id="d759d481-52c5-49d3-852e-b37ef756b532" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="ee07d839-f8fb-4eb0-b99a-55e81c4727ba" class="code"><code class="language-C++">class my_string{ 
+
+  public:
+    my_string(int x_)
+    {
+       x = x_;
+    }  
+  private:
+    int x;    
+}
+
+void main(void){
+   my_string m(10);       // direct init , en çok bu kullanılır ama {} daha iyi
+   my_string m2 = 20;     // copy init      , bu kötü bence
+   my_string m5 = {20};   // copy list init , az kullanılıo
+   my_string m3{50};      // direct list init     , yani 3 ü de doğru ama {} bu daha iyi 
+// içi int olmassa hata verirdi derleyici {} sayesinde.
+}</code></pre><p id="bc8e8055-37c0-4d80-bf83-fe8d4ec3cc80" class="">
+</p><p id="487316cb-fc0f-4fce-9adb-7c504a3187e7" class="">
+</p><p id="50f1d5d9-6229-4caf-8685-3af321a2bb53" class=""><strong>Constractor init list, Başlatıcı liste:</strong> ile ilk değer verme</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="7daa1e22-4841-42d8-80fb-b8ea4712d52f" class="code"><code class="language-C++">class my_string{ 
+
+  public:
+    my_string()
+    {
+       y = 6;
+       x = 5;         
+    }  
+  private:
+    int x , y;    
+}
+
+************
+
+class my_string{ 
+
+  public:
+    my_string() : x(5) , y(6)     // veya my_string() : x{5} , y{6}    
+    { 
+       
+    }  
+  private:
+    int x , y;    
+}
+
+
+************
+
+class my_string{ 
+
+  public:
+    my_string(int _x , int _y) : x(_x) , y(_y)     
+    { 
+       
+    }  
+  private:
+    int x , y;    
+}</code></pre><p id="c41778dc-14ba-4d6d-9e0f-1708c97feeba" class="">
+</p><p id="b3b6731f-3c01-490c-a19b-85c303b5c8ff" class="">const member için<strong><mark class="highlight-purple"> kritik yer</mark></strong></p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="eb07fcd4-1a59-4f74-91ea-51ff0b9c6cd7" class="code"><code class="language-C++">class my_string{ 
+
+  public:
+    my_string( )  
+   {
+      // istersen const değişkenlere burda değer ver yine sentaks hatası zaten çöp value ile const değer başlamış oldu anlamı yok.
+   }
+  private:
+    const int x ;       // SENTAKS HATASI , const yaptın değer default atandı olmaaaaz
+    int &amp;r;             // referansta default init edilemez
+}
+
+****************************
+class my_string{ 
+
+  public:
+    my_string( int &amp;_r )  : x{50} , r(_r) // işte çözüm , böle yapcan constuda, hata gitti , hayata gelirken bu değerle gelio ÇOK İYİİİ. bu arada burda (),{} farkı yok !
+    {
+    }
+  private:
+    const int x ;     
+    int &amp;r;   
+}
+</code></pre><p id="4227ebe0-4218-454f-9442-441839eee23f" class=""><strong>Constractor Başlatıcı liste: </strong>DURUM özeti şu ki sen eğer constractor içinde {} scope içinde ilk değerleri verirsen class içindeki başka objeler senin gerçek objelerinden önce bile başlayabilir ve maliyeti çok olur. Bunun için hep <strong>Başlatıcı liste </strong>kullanki senin objelerin hayata gelir gelmez o değer ile gelsin. Yukardaki const örneğine iyi bak onu kavrasan kompilerın nasıl çalıştığını anlıcan.</p><p id="0cd89fa7-931a-4776-ac0c-00136f6e1185" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="abdb2c72-aefa-4f10-986b-071dd86a0f77" class="code"><code class="language-C++">class my_string{ 
+  public:
+    my_string( ) : x{50} , y(78)   /// öncelik bu değerler, aşağıdakiler değil
+    {
+
+    }
+  private:
+    int x = 5;     // (inline initialization)
+    int y{6};      // default member init,   
+}</code></pre><p id="c3547b07-05af-48ae-80fc-0c45e6d48367" class="">
+</p><p id="70482a68-fe61-4897-8001-67d5cd2017bb" class="">
+</p><p id="34a35a15-fa2d-4699-8ad3-feb65981ffdb" class="">
+</p><p id="5624a780-d209-4c12-88e3-4ab856e75964" class=""><strong><mark class="highlight-red">DERS 12</mark></strong></p><p id="3dd3ac5a-b144-4f4c-a856-55f4822a76b5" class="">delete : böyle bir fonksiyon var ama bu fonksiyona yapılan çağrı sentaks hatası olacak!!</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1a21e8a3-fc41-4b43-ab90-2a57712ab0a9" class="code"><code class="language-C++">class my_string{ 
+  public:
+    my_string(int) = delete;
+  private:
+    void foo(int) = delete;
+}
+
+void foo_global(int) = delete;</code></pre><p id="36780bf9-d8f1-455a-9f08-f8f2bede64db" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="29d70dc2-3e63-48ca-bbe0-b37cf0db1404" class="code"><code class="language-C++">class my_string{ 
+  public:
+    my_string() = default;    // derleyici bizim yerimize bildirir. special member functions lara özel
+}</code></pre><p id="c094ced7-cc27-4011-8dba-753301de9f64" class="">
+</p><p id="f12c0d21-40ef-41e1-8d6b-ae10f97a8fd2" class="">ex:</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="d998eef4-194d-4402-b2fd-4db8391e5fbb" class="code"><code class="language-C++">class my_string{  
+  private:
+    const int x;    // const int x = 10;     yine hata , const değerler inline initilation olmaz , constaractorda yapmalısın
+}
+
+void main(){
+	 my_string m;    // SENTAKS HATASI     
+}
+
+//Derleyicinin yukardaki kod için implicitly yazdığı kod:
+
+class my_string{  
+    my_string() = delete;         // çünküü delete yazdı sebebi -&gt; const un ilk değeri yok !!!!!!!!!!!!!!!! 
+  private:
+    const int x;
+}</code></pre><p id="62945ab5-6624-4c32-a56e-54f427cff932" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="946c3fb2-b9b9-4f1c-b0a0-f942f2f86af1" class="code"><code class="language-C++">class my_string2{  
+  public:
+    my_string2();    // declered but not defination , PROBLEM
+}
+class my_string{  
+   // @xxx  burda implicitly declered delete var yani -&gt; my_string() = delete;
+   my_string2 M2;
+}
+
+void main(){
+	 my_string m;    // bu durumda ne olur_?  my_string2 constractorun içeriği yok? cevap @xxx
+}</code></pre><p id="c49c1608-0069-430e-8b8d-0523dc1da7c8" class="">
+</p><p id="c097326b-7800-483b-b899-8bea3f35e34e" class=""><strong>special member functions → copy constructor : </strong>verdiğin nesneye aynı şekilde değerin içeriğini kopyalar yani, apayrı bir nesne yaratmak için tabi</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1db6eb8a-3f5b-4c0c-b9df-8776db7e267b" class="code"><code class="language-C++">class my_string{  
+ public:
+ my_string()
+ { 
+
+ }
+
+ my_string(const my_string&amp;)    // user defined copy constructor , bunu biz yazmasak derleyici implicitly yazıor
+ {
+
+ }
+
+ ~my_string()
+ {
+
+ }
+}
+
+void foo(my_string obj)         
+{
+   // copy burda
+}
+
+/*void foo(const my_string&amp; obj)           // bunla karıstırma bak yukardakini, tabikide mantıklı olanda referans olurduda örnek bu yukardaki sadece copye 
+{
+  
+}*/
+
+void main(){
+	my_string m;   // my_string() çağrıldı
+  foo(m)        // my_string(const my_string&amp;) çağrıldı   
+}  // ~my_string() çağrıldı</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="716eccff-7845-4a83-896d-81c8bbaa8df5" class="code"><code class="language-C++">void main(){
+
+	my_string m;   // ctor
+	my_string  m2 = m;  // copy ctor
+	my_string  m3(m);// copy ctor
+	my_string  m4{m};// copy ctor
+	auto m5 = m;// copy ctor
+	auto m6(m);// copy ctor
+	auto m7{m}; // copy ctor
+
+} </code></pre><p id="e76da19a-4aa7-4dd5-a7b2-15186a7e21cc" class="">
+</p><p id="4b1d129d-c639-48eb-a175-60de66e5a45e" class=""><strong><mark class="highlight-red">DERS 13</mark></strong></p><p id="592f0d97-3582-4688-b0ff-b8b397786f19" class=""><strong>special member functions → copy assigment :</strong> bunuda derleyici yazıo tabiki</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="d9c92c79-c6c2-4ea6-b271-0edd43201d17" class="code"><code class="language-C++">my_string m , mx;
+
+m = mx;   // burda copy assigment çağrıldı, m in copy assigmentı ex:     m.operator = (mx)</code></pre><p id="f0305558-8735-418a-8cb2-1123ebd07fab" class="">
+</p><p id="0092566c-d748-4ba9-b65c-c179bfa20ca9" class="">Olay şu önce <strong>destructor</strong>(~my_string) çağırıor sonra <strong> copy constructor</strong>(my_string(const my_string&amp;)) çağırıor. KODu:</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="2814218e-bf71-4d6c-ae17-def625f57235" class="code"><code class="language-C++">class my_string
+{  
+ public:
+
+/** constructor **/
+ my_string(const char*p) : mlen(std::strlen(p)) , mp( static_cast&lt;char*&gt;(std::malloc(mlen+1)) )  
+ { 
+    cout &lt;&lt; &quot;loaded&quot; ;
+    std::strcpy(mp,p);
+ }
+
+/** copy constructor **/
+ my_string(const my_string&amp; other): mlen(other.mlen) , mp( static_cast&lt;char*&gt;(std::malloc(mlen+1)) )  
+ { 
+    std::strcpy(mp, other.p);
+ }
+
+/** copy assigment **/
+ my_string&amp; operator = (const my_string&amp; other)   // bu c de legal olamaz çünkü C de &quot;x = y;&quot; ifadesi L value değil c++ da L value yani meselam c++ da &quot;(x = y)++;&quot; sentaks hatası bile değil !!
+ { 
+      if(this == &amp;other)    // m = m;   kendisini kendisine eşitlersen diye KORUMA, yoksa free patlatırdı
+         return *this;
+
+      /** destructor ***/
+      cout &lt;&lt; &quot;freed copy&quot; ;
+      std::free(mp);   
+
+      /** copy constructor **/
+      mlen = other.mlen; 
+      mp = static_cast&lt;char*&gt;(std::malloc(mlen+1)) ;
+      std::strcpy(mp, other.p);
+
+      return *this;
+ }
+
+/** destructor ***/
+ ~my_string()
+ {
+    cout &lt;&lt; &quot;freed&quot; ;
+    std::free(mp);
+ }
+
+ int mlen;
+ char *mp;
+}</code></pre><p id="45cb2318-4bb1-4bfb-80b1-4f778471753c" class="">
+</p><p id="b8b8cc27-b603-4f45-aec6-5d0c4b2a30aa" class="">
+</p><p id="4acbe598-1c60-4481-a76b-f4aeb71b53a0" class=""><strong>special member functions → move constructor :</strong> bunuda derleyici yazıo tabiki, R value alıo, kaynak çalıo , değerini değiştirebilio</p><p id="9ca9a390-eea3-4b0a-852b-34155c8270a4" class=""><strong>special member functions → move assignment:</strong> bunuda derleyici yazıo tabiki, R value alıo, kaynak çalıo, değerini değiştirebilio</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1cd23511-e3f3-4051-8408-294610029862" class="code"><code class="language-C++">class my_string
+{  
+ public:
+		/** constructor **/
+		 my_string(const char*p);
+		/** destructor ***/
+		 ~my_string();
+		
+		
+		/** copy constructor **/
+		 my_string(const my_string&amp; other);
+
+		/** move constructor **/
+		 my_string(my_string&amp;&amp; other);       // not aynı zamanda copy constructor ve move assigment overloading olmuş bak !!!
+		
+		/** copy assigment **/
+		 my_string&amp; operator = (const my_string&amp; other);
+
+		/** move assigment **/
+		 my_string&amp; operator = (my_string&amp;&amp; other); // not aynı zamanda copy assigment ve move assigment overloading olmuş bak !!!
+}</code></pre><p id="009dc045-e1ff-4ed3-9fa8-4aef73eed518" class="">
+</p><p id="fbbe1340-e7ce-4946-816a-8dc0e4e320f5" class="">my_string m1 = m2;  // olay şu m2 için derleyici öyle bir karar veriyor ki m2 yi yok edip m1 e atabilior. O yüzden R value ve const değil girişi move ların</p><p id="28f06507-cd18-49bb-99c6-f8cefd7fab33" class="">
+</p><p id="a7115bf7-cb18-48b5-949b-4693bafeddd1" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="3147e5f6-e2c2-4a86-b096-8c3faee121a5" class="code"><code class="language-C++">class m_class{
+}
+
+void func(const m_class&amp; me)
+{
+}
+void func(m_class&amp;&amp; me)
+{
+}
+
+void main(){
+	m_class m;
+	func(m);                  // void func(const m_class&amp; me) çağrılır çünkü L value
+  func(m_class{});          // void func(m_class&amp;&amp; me) çağrılır çünkü R value (sonra öğrencez)
+  func(static_cast&lt;m_class&amp;&amp;&gt;(m)); // void func(m_class&amp;&amp; me) çağrılır çünkü R value işte bu
+  func(std::move(m)); // void func(m_class&amp;&amp; me) çağrılır R oldu , YUKARDAKİNİN AYNISI !!!!!
+}
+
+YAN OZETI: Move doestn move, move L value yü R valueye dönüştürüo, R ı da R a !!!!
+std::move &quot;constexpr&quot; bir func, compile timeda yani !!
+std::move(x) = static_cast&lt;m_class&amp;&amp;&gt;(x)</code></pre><p id="537312a0-091d-4a07-9c78-bd67189204a7" class="">
+</p><p id="653aa1a6-5020-4f87-ac44-452a006de519" class=""><mark class="highlight-brown"><strong>Efective modern C++ oku</strong></mark></p><p id="2d5d1ddb-160e-403b-9a2b-57de0a327017" class="">
+</p><p id="a72750ec-cc44-45b6-957e-410d56bca252" class="">DİKKAT!!</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="8244abce-3d35-4031-8893-bad2d767daa1" class="code"><code class="language-C++">class m_class{
+}
+
+void func(const m_class&amp; me) // BAK bu hem R value hem L valueleri alabilio const olduğundan bu çok önemli &quot;void func(m_class&amp;&amp; me)&quot; yoksada herkes buna başvurabilio  
+{
+}
+void func(m_class&amp;&amp; me)
+{
+}
+
+void foo(m_class&amp;&amp; r){
+  // yani bu &quot;m_class&amp;&amp;&quot; tür R veya L value değil, R veya L value olması için bişeyin ona başvuru atama vs yapılmalı!!
+  func(r);  // void func(const m_class&amp; me) ÇAĞRILIR -&gt; isimlerin oluşturduğu ifadeler her zaman L value UNUTMA!!!! , YANİ move sandın Copy oldu  ...
+}
+
+void main(){
+	m_class m;
+	foo(std::move(m));
+}</code></pre><p id="c3791d62-9507-4057-af95-4ea9382fbde9" class="">
+</p><p id="9586b784-8364-4c1f-8a74-551662391fc3" class="">
+</p><p id="e4a65b4b-bd62-42de-9ccc-8b106f298d7b" class="">EN ÇOK KLULLANILAN PATTERN=</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="ca6f3cfb-3a2c-4f71-b95f-79f1c0a73e11" class="code"><code class="language-C++">class m_class{
+	m_class() = default;
+	
+	mclass(const m_class&amp;){
+    // COPY
+	}
+	mclass( m_class&amp;&amp;){
+    // MOVE
+	}
+}
+
+void func(const m_class&amp; me) 
+{
+  m_class m(me);       // mclass(const m_class&amp;) çağırdı
+}
+
+void func(m_class&amp;&amp; me) 
+{
+  m_class m(std::move(me));  // mclass( m_class&amp;&amp;) çağırdı   , KAYNAK BURDA ÇALINDI
+}
+ 
+
+void main(){
+	m_class m;
+	func(std::move(m)); // MOVE
+  func(m);  // COPY
+}</code></pre><p id="2e4bedfa-7e02-44c7-b6e9-b0c65b06ad52" class="">
+</p><p id="79e6991b-3be3-40e2-b42b-f159e95242a4" class="">NOTE NEDEN MOVE: diyelim senin classın içinde dinamic değişkenler var mesela string !!</p><p id="6bdc031d-4721-4250-873f-c4428883a09f" class="">eee bu classı yani objeni process sırasında kullanırken çeşitli eşitleme atamalar vs yapıyorsun, bi yere gönderiorsun objeni,</p><p id="cdc9f18a-2775-4bc0-97b6-18547c0a01b8" class="">peki o zaman bu dinamik değişkenler sürekli her atamada <strong>copy</strong> yaparsa ne olur, verimi düşürür sürekli cop yaparsa. AMA move öyle değil. direk var olan adresi atanacak yeni objeye verip adresi çıkıo işin içinden. kopyalama yok, </p><p id="95da6cfe-e22f-48b1-b126-1f55ae78e816" class="">
+</p><p id="f6e9625d-1230-47b1-a671-d074c4455ff2" class="">
+</p><p id="ac0ac940-2d30-4505-b85d-34f2225990a4" class=""><strong>ALL</strong> <strong>special member functions → derleyici böle yapıo </strong></p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="d21e9fdf-2394-40dc-94ab-f8af0d6f28d6" class="code"><code class="language-C++">class my_string
+{  
+ public:
+
+/** constructor **/
+ my_string(const char*p) : mlen(std::strlen(p)) , mp( static_cast&lt;char*&gt;(std::malloc(mlen+1)) )  
+ { 
+    cout &lt;&lt; &quot;loaded&quot; ;
+    std::strcpy(mp,p);
+ }
+
+/** copy constructor **/
+ my_string(const my_string&amp; other): mlen(other.mlen) , mp( static_cast&lt;char*&gt;(std::malloc(mlen+1)) )  
+ { 
+    std::strcpy(mp, other.p);
+ }
+
+ /** move constructor **/
+ my_string(my_string&amp;&amp; other) : 
+ mlen(std::move(other.mlen)) , mp( std::move(other.mp) )  // otherın destructorı çağrılacak !!  , burda std::move olmasada olurdu zaten sadece taşınıo pointer içindeki adress !!
+ {
+   other.mlen = 0;   // dikkat kaynağı çalınanı temizledik !!
+   other.mp = nullptr; // unutma move yapmak destructor engellemez, bu yüzden böle yaptık ve bak destructor içindede kontrolünü yaptık, eğer free etseydik anlamı yok data kaybolacaktı!
+ } 
+
+/** copy assigment **/
+ my_string&amp; operator = (const my_string&amp; other)   // bu c de legal olamaz çünkü C de &quot;x = y;&quot; ifadesi L value değil c++ da L value yani meselam c++ da &quot;(x = y)++;&quot; sentaks hatası bile değil !!
+ { 
+      if(this == &amp;other)    // m = m;   kendisini kendisine eşitlersen diye KORUMA, yoksa free patlatırdı
+         return *this;
+
+      /** destructor ***/
+      cout &lt;&lt; &quot;freed copy&quot; ;
+      std::free(mp);   
+
+      /** copy constructor **/
+      mlen = other.mlen; 
+      mp = static_cast&lt;char*&gt;(std::malloc(mlen+1)) ;
+      std::strcpy(mp, other.p);
+
+      return *this;
+ }
+
+ /** move assigment **/
+ my_string&amp; operator = (my_string&amp;&amp; other)   // BAK movelarda kopyalama yok görüyon demi sadece adressler kopyalanıo maliyeti çok düşük
+ {
+    if (this != &amp;other) {
+
+       /*** chat GPT : my destructor 
+          mlen  = 0;  
+          if(mp)
+            std::free(mp);  //destructor 
+       **/
+
+        
+        mlen = std::move(other.mlen);
+        mp = std::move(other.mp);
+
+
+     /*** chat GPT : other fake destructor 
+          other.mlen  = 0;  
+          other.mp = nullptr;
+       **/
+    }
+    return *this;
+ }
+
+/** destructor ***/
+ ~my_string()
+ {
+    cout &lt;&lt; &quot;freed&quot; ;
+    if(mp)
+      std::free(mp);
+ }
+
+ int mlen;
+ char *mp;
+}</code></pre><p id="1fefb8fd-6921-449e-9eeb-5c5f09be64a0" class="">
+</p><p id="2a4e3783-045e-49e1-b683-67322c563639" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="88b8764b-65f0-4994-a877-12f694ca393f" class="code"><code class="language-C++">// Senin yazdığın class
+class my_class{
+
+}
+
+//Derleyicinin yazdığı class
+class my_class{
+  public:
+    my_class() = default;
+    ~my_class() = default;
+    my_class(const my_class&amp;) = default;
+    my_class(my_class&amp;&amp;) = default;
+    my_class&amp; operator=(const my_class&amp;) = default;
+    my_class&amp; operator=(my_class&amp;&amp;) = default;
+}</code></pre><p id="05f4dafe-7bc3-4bb0-a9e7-af963c2e3cc7" class="">
+</p><p id="daef4490-b055-4e2b-ae16-7ec92f8d0d4b" class="">EZBER TABLOSUNU EZBERLE DERS 14</p><p id="1ca48782-ccd1-4324-a2d8-9e0e31b6bd59" class="">
+</p><p id="9d519a32-f069-48ea-a5f0-72b74688b47e" class=""><mark class="highlight-red"><strong>DERS 14</strong></mark></p><p id="c1aa22be-c87c-4430-a38b-2f36dc9f3031" class="">
+</p><p id="dbe33904-875b-4b03-9c26-76907820961f" class="">move-only type class - copy’ler delete , movelar hayatta</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="67b0157d-d489-43cc-96b2-e50dd925c38b" class="code"><code class="language-C++">class my_class{
+public:
+   my_class();
+   my_class(const my_class&amp;) = delete;              // bak unutma bu R da L de alıo     
+   my_class&amp; operator = (const my_class&amp;) = delete; // bak unutma bu R da L de alıo     
+   my_class(my_class&amp;&amp;);                            // bu olmasada olur , R alıo sadece
+   my_class&amp; operator = (my_class&amp;&amp;);               // bu olmasada olur , R alıo sadece
+}</code></pre><p id="f7020eaa-c7b7-405b-9ea8-f3159d98b1a7" class="">NOT: <strong>ASLA MOVE memberları delete etme</strong>, ANLAMSIZ. zaten move olmassa copy memberlara düşüo çağrıda       “const class&amp;” R ve L alması sayesinde. Ama move memberları silerseniz hata olabilir. Move member delete edersen copy memberlar otomatik iptal olmuş oluor.</p><p id="9d4f30f7-4186-4de5-9412-cd1c9862e317" class="">
+</p><p id="8d8a77dd-28ef-42d3-8a51-fc98b28a2bbe" class="">copy var move yok</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="2bf92534-5013-48db-b879-a9ac9fbf15a6" class="code"><code class="language-C++">class my_class{
+public:
+   my_class();
+   my_class(const my_class&amp;);                   
+   my_class&amp; operator = (const my_class&amp;) ; 
+  // move&#x27;u yazmana gerek yok, copy açık  , compiler kendi move ları delete edio, istersen elinle yap delete     
+}</code></pre><p id="b15cdc92-af6f-447f-8fb7-bbb6eb5370b3" class="">
+</p><p id="8c0a5810-8782-47a8-88ad-7e304ec79d84" class="">move-only type dada durum yukardakiyle aynı yani</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="17530368-501a-44e3-8346-00dd4877760b" class="code"><code class="language-C++">class my_class{
+public:
+   my_class();
+   my_class( my_class&amp;&amp;);                   
+   my_class&amp; operator = (my_class&amp;&amp;) ; 
+  // copy&#x27;u yazmana gerek yok, copy i compiler silio zaten, istersen elinle yap delete     
+}</code></pre><p id="657a6054-4c7b-47a6-8dc2-f36823ffef61" class="">
+</p><p id="dca87eee-3d05-4358-b238-1e94b830904e" class=""><strong>temporary object</strong> - geçici nesne   → PR value (r value)</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="6fb0dbaa-0a16-4267-ab22-08c38af7e4a7" class="code"><code class="language-C++">class my_class{
+    public:
+    my_class()
+    {
+        std::cout &lt;&lt; &quot;create\n&quot;; 
+    }
+    my_class(int x)
+    {
+        std::cout &lt;&lt; &quot;int create\n&quot;; 
+    }
+     ~my_class()
+    {
+        std::cout &lt;&lt; &quot;delete\n&quot;;
+        
+    }
+};
+
+int main() {
+//main 1 test
+  {
+    my_class x(); 
+    std::cout &lt;&lt; &quot;test\n&quot;; 
+  }
+/*********************/
+//main 2 test
+    my_class();                   //  VEYA my_class{} , my_class(6) , my_class{8}
+    std::cout &lt;&lt; &quot;test\n&quot;; 
+
+/*********************/
+//main 3 test
+//ref @789
+  {
+    /** life extension **/
+    const my_class&amp; r = my_class{};    // main 1 test ile aynı !!! const ref obje kaptı classı artık o class o bu yüzden
+    std::cout &lt;&lt; &quot;test\n&quot;; 
+  }
+}
+/**
+main 1 test OUT: 
+create
+test
+delete
+******************************
+main 2 test OUT: 
+create
+delete                                 //  !!!!!!!!!!!!!! obje yaratıldığı gibi yok edildi - geçici obje olduğundan 
+test
+***************************
+main 1 test OUT: 
+create
+test
+delete
+*/
+
+void func(const my_class&amp;){  // veya void func(my_class me){
+}
+int main() {
+   my_class m(12);  // Scope leakage
+   func(m);         // BUNU YAPMA ARTIK , Scope leakage
+
+   func(my_class{12});   // BUNU KULLAN -&gt; mandatory copy elision özelliği C++ 17 den sonra geldi (ilerde görcez)
+
+   my_class&amp; r = my_class{12};   // error , BU hata PR value olduğundan
+
+   const my_class&amp; r = my_class{12};    // BU çalışır R value consta bağlanır -&gt; BU durum farklı !!!!   ref @789 yukarda
+
+   my_class&amp;&amp; r = my_class{12};         // BU çalışır R value bağlanır   aynı  ref @789  yine life extantion ama bunda kullanımı yok zaar
+}</code></pre><p id="09ed50b8-3b87-4c15-adb7-ae93fddabf2f" class="">
+</p><p id="12e8257d-f2e6-478f-a3fb-dca91d2d9387" class=""><strong>moved-from state </strong>  , taşınmış nesne durumu</p><p id="c0cb04e3-a94e-4953-968f-31a07b30371d" class="">taşıma semantiği gereksiz kopyalamanın önüne geçer !!</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="51ced45c-c0e3-4b5a-b684-89266bf4bf0c" class="code"><code class="language-C++">std::string func( ){  
+
+}
+
+
+int main() {
+  
+   std::string s = func();    // move assign çağrılır çünkü R value bak bu fonksiyon ve dönüşü    
+   std::string s = std::string(100000,&#x27;A&#x27;); // move assign çağrılır çünkü R value bak bu fonksiyon ve dönüşü  , bu copy olsa çok iş gücü olurdu !!!
+   
+   std::string s2
+   {
+      std::string sx(20000,&#x27;A&#x27;);
+      s2 = std::move(sx) ;   // move assign çağrılır
+      // sx is in moved_from state : tam bu noktada sx hala hayatta!! sx } da desctroctorı çağrılacak ama kaynağını yitirdi s2 de
+      // sx tekrar atama yapıp kullanabilirsin
+    }// sx öldü
+  
+}</code></pre><p id="94c9cbd9-bf7c-416f-83c1-78affb5f430d" class="">
+</p><p id="4e08d5c9-ff77-437c-af4d-438bc1a29acf" class="">
+</p><p id="30b7b9e0-38bd-4514-bf40-bd4d901b1f97" class="">Örnek <strong>moved-from state</strong></p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="b1e4296f-3953-4fad-8835-3d25e958c423" class="code"><code class="language-C++">int main() {
+  
+   using namespace std;
+   
+   ifstread ifs{&quot;dosya_yolu/notlar.txt&quot;}
+   string sline;   // satır satır tutacak
+   vector&lt;string&gt; svec; // satırları tutacak
+
+  // satır satır koşuyor
+   while(getline(ifs,sline)){      // dikkat et sline sürekli dolduruluo her loopda
+    svec.push_back(sline);         // dikkat burda copy yapıon sline ı vectore gereksiz işlem yükü, AŞAĞIDAKİ GİBİ YAP
+  }
+ 
+  // DOĞRUSU
+   while(getline(ifs,sline)){           // move&#x27;un sline ı yok etmemesi sayesinde bu işlem çalışabiliyor !!
+    svec.push_back(std::move(sline));   //  işte şimdi gereksiz kopyalama önlendi ama sline objesi hala hayatta bu yüzden çalışabilio zaten
+  } 
+}</code></pre><p id="224c5055-f7b3-40b7-b74b-f2ae535e5bcc" class="">
+</p><p id="773ea748-fdca-4c65-bc1f-95c4cf0207db" class="">
+</p><p id="ca58b9d7-0235-4266-ac94-5aa9d4dba971" class=""><strong>conversion constructor : </strong>dönüştüren kurucu işlev</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="99c566b4-c0db-41d8-95e8-67a77fafe89a" class="code"><code class="language-C++">class my_class{
+    public:
+    my_class()
+    {
+        std::cout &lt;&lt; &quot;create\n&quot;; 
+    }
+    my_class(int x)
+    {
+        std::cout &lt;&lt; &quot;int create\n&quot;; 
+    }
+     ~my_class()
+    {
+        std::cout &lt;&lt; &quot;delete\n&quot;;
+        
+    }
+};
+
+int main() {
+
+   my_class mx;  //@x145
+
+   std::cout &lt;&lt; &quot;test1\n&quot;;
+
+   mx = 5;   // hata yok -&gt; my_class(5) -&gt; @x948 öldü   , BUNLAR TEHLIKELI İŞLERR YAPMA BUNU ENGELLEMENIN YOLU -&gt; explicit ctor
+
+   std::cout &lt;&lt; &quot;test2\n&quot;;
+}
+
+/**
+out: 
+test1
+int create
+delete      -&gt; @x948 öldü     , yani derleyici geçici başka bir nesne oluşturdu ve move yaptı, copyde yaparsan olur.
+test2
+delete      -&gt; @x145 öldü
+**/</code></pre><p id="cec4e447-eff6-4356-9b0a-8124abfe4257" class="">
+</p><p id="3f238603-5212-47e6-8b8d-03abcb103583" class=""><strong>function overload resolution </strong>about <strong>conversion constructor</strong></p><p id="83a6108e-33cc-4854-8305-785bfdcff840" class="">bunlar kaybediyor sırayı:</p><ul id="973ada57-8833-4347-a01d-5b01c6e4619c" class="bulleted-list"><li style="list-style-type:disc">variadic conversion</li></ul><ul id="776680b6-4077-4f8a-bcf4-199df1d2b24c" class="bulleted-list"><li style="list-style-type:disc">user-defined conversion - type cast operator functions - pointerdan boola dönüşüm felan , BAZEN BU DÖNÜŞÜMLER TEHLIKELI OLUO,ONLEMENIN YOLU → <strong>explicit ctor</strong></li></ul><ul id="7433b95c-be32-431d-a101-05eabc2eab2e" class="bulleted-list"><li style="list-style-type:disc">standart conversion - double dan inte felan </li></ul><p id="e4b2677e-021f-43a2-9d65-fb53f73ce077" class="">
+</p><p id="20eb36e1-5dc8-4737-9803-fc0bacd70355" class="">
+</p><p id="21d225a9-6a40-47dd-a8a3-56e4a5ed3e93" class=""><strong>explicit ctor : conversion constructor </strong>önler. derleyiciye akıllı ol işimize karışma onu bunu dönüştürme demek demek. Örtülü dönüşüm yapma demek !! , tek elemanlı ctor ları her zaman <strong>explicit  yap. !!</strong></p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="4095f499-5eee-4040-b91b-d909724c543f" class="code"><code class="language-C++">class my_class{
+    public:
+    my_class()
+    {
+        std::cout &lt;&lt; &quot;create\n&quot;; 
+    }
+    explicit my_class(int x)
+    {
+        std::cout &lt;&lt; &quot;int create\n&quot;; 
+    }
+     ~my_class()
+    {
+        std::cout &lt;&lt; &quot;delete\n&quot;;
+        
+    }
+};
+
+int main() {
+   my_class   MX;
+   MX = 5;    // bak conversion constructor da bu geçerliydi artık HATA thanks for explicit 
+   MX = static_cast&lt;my_class&gt;(5); // BU hilesi hata yok !!
+  
+   my_class m{5};   // SIKINTI YOK
+    
+   my_class m2{5.6};   // HATA !!!
+}</code></pre><p id="13fb38b3-740f-4d5a-b405-7994b5fb45b2" class="">NOT:  bir sınıfın tek parametreli ctor larını (aksi yönde bir durum olmadıkça) HEP <strong>explicit YAP !!!!</strong></p><p id="094daa58-6043-4808-a9de-e6a9ec72e21a" class=""><strong>explicit</strong> ise copy assigmentlar felan olmuor</p><p id="cac89d0c-c559-4d10-8086-348f8b4795e6" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="d6663143-7a18-4627-ad77-c4f5c3558233" class="code"><code class="language-C++">class my_class{
+    public:
+    my_class(int , int);
+     
+};
+
+my_class foo(){
+   return {6,7};  // HATA Yok ama my_class explicit olsaydı hata olurdu !!!
+}
+</code></pre><p id="18c3aef5-f2a2-4a44-9f9d-83716db53123" class="">
+</p><p id="ef139337-b4a5-439b-a02d-32eb46b442e7" class=""><mark class="highlight-red"><strong> </strong></mark></p><p id="00356ba8-2be0-4563-858c-ec482c40d2ba" class="">
+</p><p id="96c85ce1-9c62-4115-b3ab-afb9ca3efb5b" class="">
+</p><p id="3a3d240f-348a-4328-b7b5-e6596252479c" class="">
+</p><p id="28d0e4d5-0ee4-4815-bc1d-79971641e3ab" class="">
+</p><p id="ceba9cba-c740-480b-9a0a-74b2400544a7" class="">
+</p><p id="59061c69-49b3-4a5c-a0c4-cb714e55ebc0" class="">
+</p><p id="766f8aa0-18d7-4aef-8b8f-0a8b8ed40cd7" class="">
+</p><p id="60875b89-c384-4cda-bb0f-a475a472fe41" class="">
+</p><p id="66517fac-44c9-4f0c-bfa3-3eb727fde9ca" class="">
+</p><p id="2ca378fc-99fd-4954-b2ba-2a199e842500" class="">
+</p><p id="9c18cc54-00eb-459c-ac8d-aa61cd663b44" class="">
+</p><p id="655b25fa-85f4-498b-b145-0c595d6a01a8" class="">
+</p><p id="fa361f50-b625-4bbc-97cd-d2912efe3259" class="">
+</p><p id="fa27a737-ab96-4ed3-be3e-f672fd3189af" class="">
+</p><p id="749a72ed-78bc-4d8b-a4d1-6f9c223ba308" class="">
+</p><p id="97fb45b9-7ae7-4abe-af79-d9c784d6b859" class="">
+</p><p id="f4113be6-c0ed-4683-be67-8d952b83f10d" class="">
+</p><p id="62baceb7-81c9-4836-a29f-aa406b580cf4" class="">
+</p><p id="41c1547a-d6ee-4753-8f93-2725b15b8934" class="">
+</p><p id="f2b4b6ea-3f54-4d5b-9cf2-d74f9145feb8" class="">
+</p><p id="021b4f7d-915c-4b8f-9b17-4759dd71fb56" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
